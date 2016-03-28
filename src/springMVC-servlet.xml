@@ -15,26 +15,26 @@
 	
 	<!-- configure datasource-->
 	<context:property-placeholder location="classpath:system.properties" />
-	<bean id="dataSourceOnepass" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSourceSelenium" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}" />
 		<property name="url" value="${database.url}" />
 		<property name="username" value="${database.user}" />
 		<property name="password" value="${database.password}" />
 	</bean>
 	
-	<bean id="dataSourceDrvio" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSourceSelenium2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${drvio.driver}" />
 		<property name="url" value="${drvio.url}" />
 		<property name="username" value="${drvio.user}" />
 		<property name="password" value="${drvio.password}" />
 	</bean>
 		    
-	<bean id="jdbcTemplateOnepass" class="org.springframework.jdbc.core.JdbcTemplate">
-	   <property name="dataSource" ref="dataSourceOnepass"></property>
+	<bean id="jdbcTemplate1" class="org.springframework.jdbc.core.JdbcTemplate">
+	   <property name="dataSource" ref="dataSourceSelenium"></property>
 	</bean>
 	
-	<bean id="jdbcTemplateDrvio" class="org.springframework.jdbc.core.JdbcTemplate">
-	   <property name="dataSource" ref="dataSourceDrvio"></property>
+	<bean id="jdbcTemplate2" class="org.springframework.jdbc.core.JdbcTemplate">
+	   <property name="dataSource" ref="dataSourceSelenium2"></property>
 	</bean>	
      
  
