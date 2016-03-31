@@ -5,7 +5,8 @@ public class vmtVO {
 	//use the color to display the container status; 
 	//01:grey; 02:green; 03:orange;
 	String status;
-
+        
+	String tb;
 	String bay;
 	String row;
 	String tier;
