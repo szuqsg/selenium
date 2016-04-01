@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+<div>
+  <div ng-include="'test.html'">fffffffffff</div>
+</div>
+<ul>
+		<div>123 {{ $carname }}abc</div>
+	---------------------------------------------------------
+  <li ng-repeat="x in myData">
+    {{ x.errorMessageEN + ',|111| ' + x.data.paramId + ',|2223| ' + x }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("http://192.168.1.235:8080/coreService/rest/mmsprocessor/generalSetting?token=MkUzQjBCN0MwNzgwNDFBMTZFQTY4RUQwNEYxODRFQjA6MTQ1OTQ4MDE4ODcxNDpXaW5kb3dzOldQOjI2NTcwOWVhMWQ5YjQ1Y2NiN2I3NGM5MDdiY2EyNDEwOjk1ZDgxMDUxNmQzNDQwYmE1Mzk1MzllZTNkMGJhNGNi")
+  .then(function (response) {
+  //    console.log(response.data);
+  //    alert(123);
+  //$scope.myData = response.data;
+     $scope.myData = response;
+     $scope.carname = $http;
+  });
+});
+</script>
+
+</body>
+</html>

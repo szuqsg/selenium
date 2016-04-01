@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="" ng-controller="customersController"> 
+	<div>{{ $scope.names }}</div>
+  <div ng-repeat="x in names">
+    {{ x.data }} <br>
+  </div>
+</div>
+
+<script>
+function customersController($scope,$http) {
+  $http.get("http://192.168.1.235:8080/coreService/rest/mmsprocessor/generalSetting?token=MkUzQjBCN0MwNzgwNDFBMTZFQTY4RUQwNEYxODRFQjA6MTQ1OTQ3NDk4NTcwNTpXaW5kb3dzOldQOjk2NTE5MGY4OGU5OTRiZmQ4NWRiNjg0YzJlOWY5OTg0OmFjOWQ1NjYwNTJiMGUyMzI4NDZiNzY5OTQ3NzI1NjI4")
+  .success(function(response) { console.log(response.data);alert(response.data);$scope.names = response;});
+}
+</script>
+
+</body>
+</html>
